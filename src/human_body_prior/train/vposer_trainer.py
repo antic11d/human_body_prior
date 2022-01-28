@@ -316,7 +316,7 @@ def train_vposer_once(_config):
 
     trainer = pl.Trainer(gpus=1,
                          weights_summary='top',
-                         distributed_backend = 'ddp',
+                        #  distributed_backend = 'ddp',
                          # replace_sampler_ddp=False,
                          # accumulate_grad_batches=4,
                          # profiler=False,
@@ -325,7 +325,7 @@ def train_vposer_once(_config):
                          # limit_train_batches=0.02,
                          # limit_val_batches=0.02,
                          # num_sanity_val_steps=2,
-                         plugins=[DDPPlugin(find_unused_parameters=False)],
+                        #  plugins=[DDPPlugin(find_unused_parameters=False)],
 
                          callbacks=[lr_monitor, early_stop_callback, checkpoint_callback],
 
